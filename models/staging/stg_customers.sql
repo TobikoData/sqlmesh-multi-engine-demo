@@ -1,5 +1,5 @@
 MODEL (
-  name demo.stg_customers,
+  name multi_engine_demo.stg_customers,
   cron '@daily',
   grain org_id,
   audits (UNIQUE_VALUES(columns = (
@@ -14,4 +14,4 @@ SELECT
   first_name,
   last_name,
   1 AS new_column /* non-breaking change */
-FROM demo.seed_raw_customers
+FROM multi_engine_demo.seed_raw_customers

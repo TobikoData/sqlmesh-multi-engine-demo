@@ -1,5 +1,5 @@
 MODEL (
-  name demo.customers,
+  name multi_engine_demo.customers,
   cron '@daily',
   grain customer_id,
   audits (UNIQUE_VALUES(columns = (
@@ -12,18 +12,18 @@ MODEL (
 WITH customers AS (
   SELECT
     *
-  FROM demo.stg_customers
+  FROM multi_engine_demo.stg_customers
 ), orders AS (
   SELECT
     *
-  FROM demo.stg_orders
+  FROM multi_engine_demo.stg_orders
 ), payments AS (
   SELECT
     payment_id,
     order_id,
     payment_method,
     amount
-  FROM demo.stg_payments
+  FROM multi_engine_demo.stg_payments
 ), customer_orders AS (
   SELECT
     customer_id,
@@ -62,6 +62,6 @@ SELECT
 FROM final
 
 -- create a unit test from this SQL model
--- sqlmesh create_test demo.customers --query demo.stg_customers "select * from demo.stg_customers limit 5" \
--- --query demo.stg_orders "select * from demo.stg_orders limit 5" \
--- --query demo.stg_payments "select * from demo.stg_payments limit 5"
+-- sqlmesh create_test multi_engine_demo.customers --query multi_engine_demo.stg_customers "select * from multi_engine_demo.stg_customers limit 5" \
+-- --query multi_engine_demo.stg_orders "select * from multi_engine_demo.stg_orders limit 5" \
+-- --query multi_engine_demo.stg_payments "select * from multi_engine_demo.stg_payments limit 5"

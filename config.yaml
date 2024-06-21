@@ -14,13 +14,13 @@ gateways:
             port: 5432
             user: {{ env_var('SQLMESH_STATE_USERNAME') }}
             password: {{ env_var('SQLMESH_STATE_PASSWORD') }}
-            database: sqlmesh_state_public_demo
+            database: sqlmesh_state_multi_engine_demo
 
     # use this for local development and trying out SQLMesh
     # local:
     #     connection:
     #         type: duckdb
-    #         database: sqlmesh-demo.db
+    #         database: sqlmesh-multi_engine_demo.db
 
 default_gateway: bigquery
 

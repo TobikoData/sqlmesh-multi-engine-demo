@@ -1,5 +1,5 @@
 MODEL (
-  name demo.stg_orders,
+  name multi_engine_demo.stg_orders,
   cron '@daily',
   grain order_id,
   audits (UNIQUE_VALUES(columns = (
@@ -14,4 +14,4 @@ SELECT
   user_id AS customer_id,
   order_date,
   status
-FROM demo.seed_raw_orders
+FROM multi_engine_demo.seed_raw_orders

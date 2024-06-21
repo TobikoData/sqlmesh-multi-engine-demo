@@ -1,5 +1,5 @@
 MODEL (
-  name demo.seed_model,
+  name multi_engine_demo.seed_model,
   kind SEED (
     path '../../seeds/seed_data.csv'
   ),
